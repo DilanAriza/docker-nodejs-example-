@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+    image: dilanapp
+    environment:
+      MONGO_URL: "mongodb://db:27017/test"
+    depends_on:
+      - db
+    ports:
+      - "4000-4004:4000"
+
+  db:
+    image: mongo
